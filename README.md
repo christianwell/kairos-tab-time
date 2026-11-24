@@ -25,6 +25,8 @@
 
 ## VS Code companion
 
+![Kairos focus time in the VS Code status bar](screenshots/vscode-status-bar.png)
+
 Install [Kairos](https://github.com/hackclub/kairos) on the same computer as VS Code. From this repository, run:
 
 ```sh

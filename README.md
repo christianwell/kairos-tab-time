@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img src="gnome-extension/icons/kairos-32.png" width="32" height="32" alt="Kairos pixel-clock icon">
+  <img src="https://raw.githubusercontent.com/christianwell/kairos-tab-time/main/gnome-extension/icons/kairos-32.png" width="32" height="32" alt="Kairos pixel-clock icon">
 </p>
 
 <p align="center">
@@ -18,15 +18,21 @@
 ## GNOME top bar
 
 <p align="center">
-  <img width="800" alt="Kairos focus-time tab in the GNOME top bar, with surrounding desktop details removed" src="gnome-extension/screenshots/top-bar.png">
+  <img width="800" alt="Kairos focus-time tab in the GNOME top bar, with surrounding desktop details removed" src="https://raw.githubusercontent.com/christianwell/kairos-tab-time/main/gnome-extension/screenshots/top-bar.png">
 </p>
 
-**[Install the GNOME extension →](gnome-extension/INSTALL.md)** 
+**[Install the GNOME extension →](https://github.com/christianwell/kairos-tab-time/blob/main/gnome-extension/INSTALL.md)**
 
 ## VS Code companion
 
-Open this folder in VS Code and press **F5** to launch an Extension Development Host. The status bar shows today's Kairos time and opens the dashboard when clicked. If the local app is unavailable, it shows `Kairos —` and retries every 15 seconds.
+Install [Kairos](https://github.com/hackclub/kairos) on the same computer as VS Code. From this repository, run:
 
-Run `npm test` for the companion's unit tests. The GNOME extension lives separately in `gnome-extension/`.
+```sh
+sh install-vscode.sh
+```
+
+Reload the VS Code window after installation. The status bar shows today's Kairos focus time; click it to open the dashboard. If Kairos is unavailable, it shows `Kairos —` and retries every 15 seconds. Run **Kairos: Refresh Tab Time** from the Command Palette to check immediately. To update, pull the latest code and rerun the installer. To remove it, uninstall **Kairos Tab Time** from VS Code's Extensions view.
+
+For development, open this folder in VS Code and press **F5** to launch an Extension Development Host. Run `npm test` for unit tests; `npm ci && npm run package` builds a standalone VSIX. The GNOME extension lives separately in `gnome-extension/`.
 
 The bundled icon is copied from [Kairos's browser extension](https://github.com/hackclub/kairos/tree/main/extension/src/icons) (upstream AGPL-3.0).

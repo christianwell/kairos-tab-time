@@ -3,7 +3,11 @@
   "displayName": "Kairos Tab Time",
   "description": "Show today's Kairos focus time in the VS Code status bar.",
   "version": "0.1.0",
-  "publisher": "kairos",
+  "publisher": "christianwell",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christianwell/kairos-tab-time.git"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -23,6 +27,10 @@
     ]
   },
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "package": "vsce package --no-dependencies --out kairos-tab-time.vsix"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "4.1.1"
   }
 }

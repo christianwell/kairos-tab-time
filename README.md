@@ -1,7 +1,7 @@
 <h1 align="center">Kairos Tab Time</h1>
 
 <p align="center">
-  <em>Your time vibe-coding, on your screen</em>
+  <em>Your time (vibe) coding, on your screen</em>
 </p>
 
 <p align="center">

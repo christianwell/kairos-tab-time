@@ -1,0 +1,7 @@
+{
+  "uuid": "kairos-tab-time@local",
+  "name": "Kairos Tab Time",
+  "description": "A movable Kairos focus-time tab in the GNOME top bar.",
+  "shell-version": ["45", "46"],
+  "settings-schema": "org.gnome.shell.extensions.kairos-tab-time"
+}

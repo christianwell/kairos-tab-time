@@ -1,0 +1,28 @@
+{
+  "name": "kairos-tab-time",
+  "displayName": "Kairos Tab Time",
+  "description": "Show today's Kairos focus time in the VS Code status bar.",
+  "version": "0.1.0",
+  "publisher": "kairos",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "kairosTabTime.refresh",
+        "title": "Kairos: Refresh Tab Time"
+      }
+    ]
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}

@@ -14,6 +14,8 @@ sh gnome-extension/install.sh
 
 Already downloaded this project? Open a terminal in its folder and run just `sh gnome-extension/install.sh`. The installer packages the extension, installs it, and enables it for you; it does not need administrator access.
 
+Alternatively, download `kairos-tab-time@local.shell-extension.zip` from [Releases](https://github.com/christianwell/kairos-tab-time/releases), then run `gnome-extensions install --force kairos-tab-time@local.shell-extension.zip` and `gnome-extensions enable kairos-tab-time@local`.
+
 **If it says “extension doesn't exist”:** GNOME needs to discover the new installation. Save your work first. On **X11**, press **Alt+F2**, type `r`, and press **Enter**. On **Wayland**, log out and back in. Then run:
 
 ```sh

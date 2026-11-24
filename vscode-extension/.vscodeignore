@@ -1,9 +1,6 @@
-AGENTS.md
-.gitignore
 .vscodeignore
 .vscode/**
-gnome-extension/**
 test/**
-install-vscode.sh
+install.sh
 package-lock.json
 node_modules/**

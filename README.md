@@ -25,16 +25,18 @@
 
 ## VS Code companion
 
-![Kairos focus time in the VS Code status bar](screenshots/vscode-status-bar.png)
+![Kairos focus time in the VS Code status bar](vscode-extension/screenshots/vscode-status-bar.png)
 
 Install [Kairos](https://github.com/hackclub/kairos) on the same computer as VS Code. From this repository, run:
 
 ```sh
-sh install-vscode.sh
+sh vscode-extension/install.sh
 ```
 
-Reload the VS Code window after installation. The status bar shows today's Kairos focus time; click it to open the dashboard. If Kairos is unavailable, it shows `Kairos —` and retries every 15 seconds. Run **Kairos: Refresh Tab Time** from the Command Palette to check immediately. To update, pull the latest code and rerun the installer. To remove it, uninstall **Kairos Tab Time** from VS Code's Extensions view.
+Reload VS Code after installation. The status bar shows today's Kairos focus time; click it to open the dashboard. [VS Code usage and development →](vscode-extension/README.md)
 
-For development, open this folder in VS Code and press **F5** to launch an Extension Development Host. Run `npm test` for unit tests; `npm ci && npm run package` builds a standalone VSIX. The GNOME extension lives separately in `gnome-extension/`.
+## Releases
+
+Version tags such as `v0.1.0` build and publish both a VS Code `.vsix` and a GNOME Shell `.zip` on [GitHub Releases](https://github.com/christianwell/kairos-tab-time/releases). The tag version must match `vscode-extension/package.json`. Downloads do not need Node.js or a repository checkout; follow the extension guides to install them.
 
 The bundled icon is copied from [Kairos's browser extension](https://github.com/hackclub/kairos/tree/main/extension/src/icons) (upstream AGPL-3.0).

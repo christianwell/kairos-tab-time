@@ -2,7 +2,7 @@
 
 ## What this project is
 
-- `gnome-extension/` is the GNOME Shell top-bar tab; root `extension.js`, `time.js`, `package.json`, and `test/` are the separate VS Code status-bar companion. Keep the two surfaces independent.
+- `gnome-extension/` is the GNOME Shell top-bar tab; `vscode-extension/` is the separate VS Code status-bar companion. Keep the two surfaces independent.
 - Read Kairos's local status at `http://127.0.0.1:24816/v1/status`; `today_secs` is the focus total in seconds. Use Kairos's existing CLI for pause/resume, not a second timer or invented progress goal. The bundled `gnome-extension/icons/kairos-32.png` comes from upstream Kairos.
 - The installed `kairos-focus@obayy.dev` extension provides focus tracking. Keep it enabled; this project may hide its panel actor while its own tab is visible, but must restore it on disable. Do not change Ubuntu AppIndicators' global tray position to move Kairos: that moves everyone else's icons.
 
@@ -16,5 +16,5 @@
 
 ## VS Code workflow
 
-- Run `npm test` for the companion. `sh install-vscode.sh` builds a VSIX and installs `christianwell.kairos-tab-time` in local VS Code; keep the README installation steps in sync with it.
+- From `vscode-extension/`, run `npm test` for the companion. `sh vscode-extension/install.sh` from the repository root builds a VSIX and installs `christianwell.kairos-tab-time` in local VS Code; keep its README installation steps in sync with it.
 - Check the VSIX contents when changing packaging so the GNOME extension and development files stay out. After installing, reload the VS Code window and inspect the bottom-right status bar with Kairos running; an installed-extension listing alone does not confirm the item appears.

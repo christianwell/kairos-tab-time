@@ -1,52 +1,40 @@
 # Install the Kairos GNOME tab
 
-This adds a focus-time pill to your **GNOME top bar**. You need GNOME Shell **45 or 46** and the [Kairos desktop app](https://github.com/hackclub/kairos) running on the same computer. The tab cannot track time on its own.
+You need **GNOME Shell 45 or 46** and the [Kairos desktop app](https://github.com/hackclub/kairos) running on the same computer.
 
-## 1. Download this project
+## Install
 
-Open a terminal and run:
+Open a terminal and copy these commands:
 
 ```sh
 git clone https://github.com/christianwell/kairos-tab-time.git
 cd kairos-tab-time
+sh gnome-extension/install.sh
 ```
 
-Already downloaded the repository? Open a terminal **inside the `kairos-tab-time` folder** and skip this step. If you downloaded a ZIP, extract it first and open a terminal inside the extracted folder.
+Already downloaded this project? Open a terminal in its folder and run just `sh gnome-extension/install.sh`. The installer packages the extension, installs it, and enables it for you; it does not need administrator access.
 
-## 2. Install the tab
-
-Copy and run this whole block in that terminal:
+**If it says “extension doesn't exist”:** GNOME needs to discover the new installation. Save your work first. On **X11**, press **Alt+F2**, type `r`, and press **Enter**. On **Wayland**, log out and back in. Then run:
 
 ```sh
-gnome-extensions pack gnome-extension \
-  --schema schemas/org.gnome.shell.extensions.kairos-tab-time.gschema.xml \
-  --extra-source icons --force
-gnome-extensions install --force kairos-tab-time@local.shell-extension.zip
 gnome-extensions enable kairos-tab-time@local
 ```
 
-**Don't see the tab yet?** If the last command says the extension doesn't exist, save your work and restart GNOME Shell so it finds the new installation:
-
-- **X11:** Press **Alt+F2**, type `r`, then press **Enter**. This restarts the top bar without logging you out.
-- **Wayland:** Log out and log back in.
-
-Then run `gnome-extensions enable kairos-tab-time@local` again. You only need this restart when GNOME hasn't discovered a new installation.
-
-## 3. Use it
-
-Click **Kairos** in the top bar to see today's focus time, pause or resume tracking, or open the dashboard. Choose **Move tab → Left / By the clock / Right** to move it; your choice is saved. It does not support free dragging yet.
-
-Keep `kairos-focus@obayy.dev` enabled if you use that extension for focus tracking. The new tab hides the older Kairos panel item while it runs, but does not turn off tracking.
+Click **Kairos** in the top bar to see your time and pause or resume tracking. **Move tab** lets you choose Left, By the clock, or Right. Keep `kairos-focus@obayy.dev` enabled if you use it for focus tracking.
 
 ## Update or remove
 
-To update, get the latest version with `git pull` from inside the project folder, then run the three install commands from step 2 again. Disable and re-enable the tab to load the new code:
+To update, open a terminal in the project folder and run:
+
+```sh
+git pull
+sh gnome-extension/install.sh
+```
+
+To turn the tab off and restore the previous Kairos panel item:
 
 ```sh
 gnome-extensions disable kairos-tab-time@local
-gnome-extensions enable kairos-tab-time@local
 ```
 
-To **turn the tab off**, run only the `disable` command above. Your previous Kairos panel item will reappear.
-
-If the tab says `Kairos —`, start the Kairos desktop app; the tab reads its local status at `http://127.0.0.1:24816/v1/status`.
+If the tab shows `Kairos —`, start the Kairos desktop app.

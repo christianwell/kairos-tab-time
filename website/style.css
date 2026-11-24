@@ -1,0 +1,76 @@
+:root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #090a0c; color: #f5f6f6; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+body { margin: 0; }
+a { color: inherit; }
+.wrap { width: min(1150px, calc(100% - 48px)); margin-inline: auto; }
+.header { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.header::after { content: ''; position: absolute; top: 74px; left: 0; right: 0; height: 1px; background: #23252a; }
+.brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 780; font-size: 22px; letter-spacing: -.04em; text-decoration: none; white-space: nowrap; }
+.brand img { image-rendering: pixelated; }
+nav { display: flex; align-items: center; gap: 32px; font-size: 14px; }
+nav a { text-decoration: none; color: #c4c5c9; }
+nav .nav-install { background: #c9a8fa; color: #171020; border-radius: 8px; padding: 12px 20px; font-weight: 700; }
+.hero { padding-top: 78px; text-align: center; }
+h1 { font-size: clamp(43px, 6vw, 76px); line-height: 1.04; letter-spacing: -.065em; margin: 0; font-weight: 800; }
+.hero > p { font-size: clamp(16px, 2vw, 19px); color: #adb0b5; margin: 25px auto 0; line-height: 1.6; }
+.actions { display: flex; gap: 16px; justify-content: center; margin: 30px 0 54px; }
+.button { display: inline-flex; align-items: center; justify-content: center; border-radius: 10px; padding: 16px 24px; font-family: inherit; font-weight: 700; text-decoration: none; text-align: center; transition: transform .12s, background-color .12s; }
+.button:active, .nav-install:active { transform: scale(.97); }
+.primary { background: #c9a8fa; color: #171020; }
+.secondary { background: #17191b; border: 1px solid #36393e; color: #fff; }
+.showcase { width: min(100%, 1010px); margin: 0 auto; border: 1px solid #34323e; border-radius: 13px; background: radial-gradient(ellipse at 30% 25%, #282239, #17151f 72%); padding: 40px clamp(20px, 6%, 68px) 22px; box-shadow: 0 25px 90px #0005; text-align: left; }
+.shot + .shot { margin-top: 30px; }
+.shot h2 { font-size: 18px; margin: 0 0 14px; letter-spacing: -.025em; }
+.gnome-frame { display: flex; justify-content: center; overflow: hidden; border: 1px solid #4b4756; border-radius: 6px; background: #111; }
+.gnome-shot { display: block; width: 800px; height: 72px; flex: none; }
+.vscode-shot { display: flex; align-items: center; background: #111214; min-height: 56px; border: 1px solid #4b4756; border-radius: 6px; padding: 12px 16px; }
+.vscode-shot img { display: block; width: 94px; height: 23px; image-rendering: auto; }
+.caption { margin: 22px 0 0; color: #a5a2ae; font-size: 12px; text-align: center; }
+.eyebrow { color: #c9a8fa; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; }
+.install h2 { font-size: clamp(30px, 4vw, 43px); letter-spacing: -.05em; margin: 8px 0 10px; }
+.install > p, .install-panel p { color: #adb0b5; line-height: 1.6; }
+.install { padding-block: 90px; }
+.install > p { margin: 0 0 30px; }
+.install-tabs { display: flex; gap: 6px; border-bottom: 1px solid #303039; }
+.install-tab { padding: 16px 21px; border: 0; border-bottom: 3px solid transparent; color: #a7a7b0; background: none; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer; }
+.install-tab[aria-selected="true"] { border-color: #c9a8fa; color: #f5f6f6; }
+.install-panel { display: grid; grid-template-columns: minmax(240px, .8fr) minmax(0, 1.2fr); gap: 48px; padding: 40px; border: 1px solid #303039; border-top: 0; border-radius: 0 0 12px 12px; background: #15151a; }
+.install-panel[hidden] { display: none; }
+.steps { display: grid; gap: 20px; align-content: start; }
+.steps > div { display: flex; gap: 16px; }
+.steps span { color: #c9a8fa; font-weight: 800; font-size: 15px; padding-top: 2px; }
+.steps p { margin: 0; }
+.steps strong { color: #f5f6f6; font-size: 17px; }
+.install-method { display: flex; flex-direction: column; align-items: start; }
+.method-label { color: #c9a8fa; font-size: 13px; font-weight: 700; margin: 2px 0 15px; }
+.terminal { display: flex; align-items: center; gap: 12px; width: 100%; padding: 18px; background: #0b0b10; border: 1px solid #373340; border-radius: 8px; }
+.terminal code, .install-method p code, .steps code { font-size: 12px; color: #d7c1fa; overflow-wrap: anywhere; line-height: 1.65; }
+.terminal code { min-width: 0; flex: 1; }
+.prompt { color: #c9a8fa; font-family: monospace; }
+.copy { border: 1px solid #4a4255; border-radius: 6px; padding: 8px 10px; background: #24202e; color: #fff; font-family: inherit; font-size: 12px; font-weight: 600; cursor: pointer; }
+.copy:active { transform: scale(.97); }
+.or { color: #90919b; font-size: 13px; margin: 22px 0 12px; }
+.install-method p { margin: 20px 0 0; font-size: 13px; }
+footer { border-top: 1px solid #292b30; color: #92969a; display: flex; justify-content: space-between; gap: 20px; padding-block: 30px; font-size: 13px; }
+a:focus-visible, button:focus-visible { outline: 2px solid #c9a8fa; outline-offset: 4px; }
+@media (hover: hover) and (pointer: fine) { nav a:hover, footer a:hover, .install a:not(.button):hover { color: #e3d0ff; } .primary:hover, .nav-install:hover { background: #dcc4ff; } .secondary:hover, .copy:hover { background: #25252b; } .install-tab:hover { color: #fff; } }
+@media (max-width: 720px) {
+  .wrap { width: min(100% - 32px, 500px); }
+  .brand { font-size: 18px; }
+  .brand img { width: 26px; height: 26px; }
+  nav { gap: 12px; }
+  nav .nav-install { padding: 9px 12px; }
+  .hero { padding-top: 76px; }
+  h1 br { display: none; }
+  .actions, footer { flex-direction: column; align-items: stretch; }
+  .actions { margin-bottom: 40px; }
+  .showcase { padding: 26px 18px 20px; }
+  .install { padding-block: 48px; }
+  .install-tabs { gap: 0; }
+  .install-tab { flex: 1; padding: 14px 8px; font-size: 13px; }
+  .install-panel { grid-template-columns: 1fr; gap: 32px; padding: 24px 18px; }
+  .terminal { gap: 9px; padding: 12px; }
+  .terminal code { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }

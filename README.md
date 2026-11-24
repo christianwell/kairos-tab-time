@@ -14,6 +14,8 @@
 
 </p>
 
+**[Website →](https://kairos-tab-time.christianwell.xyz/)** Install the GNOME tab or VS Code companion from a link or a one-line command, without cloning this repository. The static site lives in `website/`; preview it with `python3 -m http.server 8000 --directory website` and open http://localhost:8000.
+
 
 ## GNOME top bar
 
@@ -21,16 +23,18 @@
   <img width="800" alt="Kairos focus-time tab in the GNOME top bar, with surrounding desktop details removed" src="https://raw.githubusercontent.com/christianwell/kairos-tab-time/main/gnome-extension/screenshots/top-bar.png">
 </p>
 
-**[Install the GNOME extension →](https://github.com/christianwell/kairos-tab-time/blob/main/gnome-extension/INSTALL.md)**
+**[Install the GNOME extension on the website →](https://kairos-tab-time.christianwell.xyz/#install)** · [GNOME install guide](gnome-extension/INSTALL.md)
 
 ## VS Code companion
 
 ![Kairos focus time in the VS Code status bar](vscode-extension/screenshots/vscode-status-bar.png)
 
-Install [Kairos](https://github.com/hackclub/kairos) on the same computer as VS Code. From this repository, run:
+**[Get the VS Code companion on the website →](https://kairos-tab-time.christianwell.xyz/#vscode)**
+
+Install [Kairos](https://github.com/hackclub/kairos) on the same computer as VS Code, then run:
 
 ```sh
-sh vscode-extension/install.sh
+curl -fsSL https://kairos-tab-time.christianwell.xyz/install-vscode.sh | sh
 ```
 
 Reload VS Code after installation. The status bar shows today's Kairos focus time; click it to open the dashboard. [VS Code usage and development →](vscode-extension/README.md)

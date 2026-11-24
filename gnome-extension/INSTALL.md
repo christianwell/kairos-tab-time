@@ -4,15 +4,13 @@ You need **GNOME Shell 45 or 46** and the [Kairos desktop app](https://github.co
 
 ## Install
 
-Open a terminal and copy these commands:
+Open the [GNOME install guide on the website](https://kairos-tab-time.christianwell.xyz/#install), or install the latest release from a terminal without cloning the repository:
 
 ```sh
-git clone https://github.com/christianwell/kairos-tab-time.git
-cd kairos-tab-time
-sh gnome-extension/install.sh
+curl -fsSL https://kairos-tab-time.christianwell.xyz/install.sh | sh
 ```
 
-Already downloaded this project? Open a terminal in its folder and run just `sh gnome-extension/install.sh`. The installer packages the extension, installs it, and enables it for you; it does not need administrator access.
+Already downloaded this project? From the repository root, run `sh gnome-extension/install.sh`. It packages, installs, and enables the tab without administrator access.
 
 Alternatively, download `kairos-tab-time@local.shell-extension.zip` from [Releases](https://github.com/christianwell/kairos-tab-time/releases), then run `gnome-extensions install --force kairos-tab-time@local.shell-extension.zip` and `gnome-extensions enable kairos-tab-time@local`.
 
@@ -26,7 +24,7 @@ Click **Kairos** in the top bar to see your time and pause or resume tracking. *
 
 ## Update or remove
 
-To update, open a terminal in the project folder and run:
+To update, run the release install command again, or from the repository root run:
 
 ```sh
 git pull

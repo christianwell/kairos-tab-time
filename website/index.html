@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090a0c">
+  <meta name="description" content="Your time vibe-coding, on your screen. Kairos focus time in the GNOME top bar and VS Code status bar.">
+  <title>Kairos Tab Time</title>
+  <link rel="icon" href="assets/kairos-32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <header class="header wrap">
+    <a class="brand" href="#top"><img src="assets/kairos-32.png" width="32" height="32" alt="">Kairos Tab Time</a>
+    <nav aria-label="Main navigation"><a href="https://github.com/christianwell/kairos-tab-time">GitHub</a><a class="nav-install" href="#install">Install</a></nav>
+  </header>
+  <main id="top">
+    <section class="hero wrap" aria-labelledby="headline">
+      <h1 id="headline">Your time vibe-coding,<br> on your screen</h1>
+      <p>Kairos focus time in the GNOME top bar and VS Code status bar.</p>
+      <div class="actions"><a class="button primary" href="#install" data-select="gnome">Install the GNOME extension</a><a class="button secondary" href="#install" data-select="vscode">Get the VS Code companion</a></div>
+      <div class="showcase" aria-label="Screenshots from the extensions">
+        <div class="shot"><h2>GNOME top bar</h2><div class="gnome-frame"><img class="gnome-shot" src="assets/top-bar.png" width="800" height="72" alt="Kairos 31m shown in the GNOME top bar"></div></div>
+        <div class="shot"><h2>VS Code status bar</h2><div class="vscode-shot"><img src="assets/vscode-status-bar.png" width="91" height="23" alt="Kairos 51m shown in the VS Code status bar"></div></div>
+        <p class="caption">From the actual extensions · Screenshots taken at different times</p>
+      </div>
+    </section>
+    <section class="install wrap" id="install" aria-labelledby="install-title">
+      <span class="eyebrow">Get started</span><h2 id="install-title">Put Kairos where you work.</h2>
+      <p>Pick a companion. Install <a href="https://kairos.hackclub.com/">Kairos</a> first if you haven't already.</p>
+      <div class="install-tabs" role="tablist" aria-label="Choose a companion">
+        <button class="install-tab" role="tab" type="button" id="tab-gnome" aria-controls="gnome" aria-selected="true">GNOME top bar</button>
+        <button class="install-tab" role="tab" type="button" id="tab-vscode" aria-controls="vscode" aria-selected="false" tabindex="-1">VS Code companion</button>
+      </div>
+      <div class="install-panel" id="gnome" role="tabpanel" aria-labelledby="tab-gnome">
+        <div class="steps">
+          <div><span>01</span><p><strong>Get Kairos</strong><br><a href="https://kairos.hackclub.com/">Install Kairos</a> and keep it running on this computer.</p></div>
+          <div><span>02</span><p><strong>Add the tab</strong><br>On GNOME Shell 45 or 46, paste the command into your terminal. No Node.js or repository checkout.</p></div>
+          <div><span>03</span><p><strong>Find it in the top bar</strong><br>Click Kairos to see your time and pause or resume tracking.</p></div>
+        </div>
+        <div class="install-method"><span class="method-label">GNOME · Linux</span><div class="terminal"><span class="prompt" aria-hidden="true">$</span><code>curl -fsSL https://kairos-tab-time.christianwell.xyz/install.sh | sh</code><button type="button" class="copy" aria-label="Copy GNOME install command">Copy</button></div><span class="or">or download the file</span><a class="button secondary" href="https://github.com/christianwell/kairos-tab-time/releases/latest/download/kairos-tab-time@local.shell-extension.zip">Download GNOME extension ↓</a><p>Downloaded the ZIP? Run <code>gnome-extensions install --force kairos-tab-time@local.shell-extension.zip</code>, then <code>gnome-extensions enable kairos-tab-time@local</code>. <a href="https://github.com/christianwell/kairos-tab-time/blob/main/gnome-extension/INSTALL.md">Installation help ↗</a></p></div>
+      </div>
+      <div class="install-panel" id="vscode" role="tabpanel" aria-labelledby="tab-vscode" hidden>
+        <div class="steps">
+          <div><span>01</span><p><strong>Get Kairos</strong><br><a href="https://kairos.hackclub.com/">Install Kairos</a> on the same computer as VS Code.</p></div>
+          <div><span>02</span><p><strong>Add the companion</strong><br>Paste the command into your terminal. You'll need the <code>code</code> command, but not Node.js.</p></div>
+          <div><span>03</span><p><strong>Reload VS Code</strong><br>See today's focus time in the bottom-right status bar. Click it to open your dashboard.</p></div>
+        </div>
+        <div class="install-method"><span class="method-label">VS Code · Desktop</span><div class="terminal"><span class="prompt" aria-hidden="true">$</span><code>curl -fsSL https://kairos-tab-time.christianwell.xyz/install-vscode.sh | sh</code><button type="button" class="copy" aria-label="Copy VS Code install command">Copy</button></div><span class="or">or download the file</span><a class="button secondary" href="https://github.com/christianwell/kairos-tab-time/releases/latest/download/kairos-tab-time.vsix">Download VS Code companion ↓</a><p>Downloaded the VSIX? In VS Code, open Extensions → ⋯ → Install from VSIX. <a href="https://github.com/christianwell/kairos-tab-time/blob/main/vscode-extension/README.md">Installation help ↗</a></p></div>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap"><span>Kairos Tab Time · An independent companion for <a href="https://github.com/hackclub/kairos">Kairos</a></span><a href="https://github.com/christianwell/kairos-tab-time">Source on GitHub ↗</a></footer>
+</body>
+</html>

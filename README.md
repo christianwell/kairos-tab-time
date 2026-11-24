@@ -21,11 +21,7 @@
   <img width="800" alt="Kairos focus-time tab in the GNOME top bar, with surrounding desktop details removed" src="gnome-extension/screenshots/top-bar.png">
 </p>
 
-Click the tab to see today's focus time, pause or resume tracking, and open your Kairos dashboard. **Move tab** lets you place it on the left, by the clock, or on the right; the choice persists. This is position selection, not free dragging.
-
-The extension hides the older Kairos panel item while it's running, but keeps the `kairos-focus@obayy.dev` tracking extension enabled. Other tray icons stay put.
-
-**[Install the GNOME extension →](gnome-extension/INSTALL.md)** — prerequisites, setup, updates, and removal are together with its source code.
+**[Install the GNOME extension →](gnome-extension/INSTALL.md)** 
 
 ## VS Code companion
 

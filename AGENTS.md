@@ -1,5 +1,7 @@
 # Repository guidance
 
+- Edit a `README.md` file only when the user explicitly asks to change it. Do not update READMEs automatically to accompany code or installation changes.
+
 ## What this project is
 
 - `gnome-extension/` is the GNOME Shell top-bar tab; `vscode-extension/` is the separate VS Code status-bar companion. Keep the two surfaces independent.
@@ -16,5 +18,5 @@
 
 ## VS Code workflow
 
-- From `vscode-extension/`, run `npm test` for the companion. `sh vscode-extension/install.sh` from the repository root builds a VSIX and installs `christianwell.kairos-tab-time` in local VS Code; keep its README installation steps in sync with it.
+- From `vscode-extension/`, run `npm test` for the companion. `sh vscode-extension/install.sh` from the repository root builds a VSIX and installs `christianwell.kairos-tab-time` in local VS Code; when the user authorizes README edits, keep its installation steps in sync with the script.
 - Check the VSIX contents when changing packaging so the GNOME extension and development files stay out. After installing, reload the VS Code window and inspect the bottom-right status bar with Kairos running; an installed-extension listing alone does not confirm the item appears.

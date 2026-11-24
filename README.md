@@ -9,15 +9,11 @@
 </p>
 
 <p align="center">
-  <img alt="GNOME Shell 45–46" src="https://img.shields.io/badge/GNOME_Shell-45%E2%80%9346-4A86CF?logo=gnome&logoColor=white">
-  <img alt="VS Code 1.85+" src="https://img.shields.io/badge/VS_Code-1.85%2B-007ACC?logo=visualstudiocode&logoColor=white">
   <a href="https://github.com/hackclub/kairos"><img alt="Powered by Kairos" src="https://img.shields.io/badge/powered_by-Kairos-EC3750"></a>
+    <a href="https://hackclub.com/"><img alt="Hack Club" src="https://img.shields.io/badge/hack--club-EC3750?style=flat&logo=hackclub&logoColor=white"></a>&nbsp;
+
 </p>
 
-<p align="center">
-  A small, rounded tab for the GNOME top bar, with a VS Code status-bar companion.<br>
-  Both read today's focus time from the <a href="https://github.com/hackclub/kairos">Kairos</a> desktop app running on your computer.
-</p>
 
 ## GNOME top bar
 

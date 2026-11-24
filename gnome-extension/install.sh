@@ -13,7 +13,7 @@ trap 'rm -rf "$bundle_dir"' EXIT HUP INT TERM
 
 gnome-extensions pack "$extension_dir" --out-dir "$bundle_dir" --force \
     --schema schemas/org.gnome.shell.extensions.kairos-tab-time.gschema.xml \
-    --extra-source icons
+    --extra-source icons --extra-source hackatime.js
 
 if gnome-extensions info "$uuid" 2>/dev/null | grep -q 'Enabled: Yes'; then
     gnome-extensions disable "$uuid"

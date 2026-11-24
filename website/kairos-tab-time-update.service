@@ -1,0 +1,6 @@
+[Unit]
+Description=Update Kairos Tab Time website from GitHub
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh %h/sites/kairos-tab-time/deploy-from-github.sh

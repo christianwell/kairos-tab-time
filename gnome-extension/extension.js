@@ -8,6 +8,7 @@ import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js';
 import * as PopupMenu from 'resource:///org/gnome/shell/ui/popupMenu.js';
+import {Hackatime} from './hackatime.js';
 
 const STATUS_URL = 'http://127.0.0.1:24816/v1/status';
 const POSITIONS = ['left', 'center', 'right'];
@@ -55,6 +56,36 @@ export default class KairosTabTime extends Extension {
         indicator.menu.addAction('Open dashboard', () =>
             Gio.AppInfo.launch_default_for_uri('https://kairos.hackclub.com/me', null));
 
+        const hackatime = new PopupMenu.PopupSubMenuMenuItem('Hackatime');
+        const hackOverview = new PopupMenu.PopupBaseMenuItem({reactive: false, can_focus: false});
+        this._hackLabel = new St.Label({text: 'Not connected', style_class: 'kairos-state'});
+        hackOverview.add_child(this._hackLabel);
+        hackatime.menu.addMenuItem(hackOverview);
+        this._hack = new Hackatime(text => {
+            this._hackLabel.text = text;
+            this._hackAction.label.text = this._hack.token ? 'Disconnect Hackatime' : 'Connect Hackatime';
+        });
+        this._hackAction = hackatime.menu.addAction('Connect Hackatime', () => {
+            if (this._hack.token)
+                this._hack.disconnect();
+            else
+                this._hack.connect();
+        });
+        if (this._hack.token)
+            this._hack.refresh();
+        indicator.menu.addMenuItem(hackatime);
+
+        indicator.menu.addAction('Update extension…', () => {
+            const terminal = GLib.find_program_in_path('gnome-terminal');
+            if (!terminal) {
+                Gio.AppInfo.launch_default_for_uri('https://kairos-tab-time.christianwell.xyz/#gnome', null);
+                return;
+            }
+            Gio.Subprocess.new([terminal, '--', 'sh', '-c',
+                'script=$(mktemp); trap \'rm -f "$script"\' EXIT; if curl -fsSL https://kairos-tab-time.christianwell.xyz/install.sh -o "$script"; then sh "$script"; fi; printf "\\nPress Enter to close..."; read answer'],
+            Gio.SubprocessFlags.NONE);
+        });
+
         const move = new PopupMenu.PopupSubMenuMenuItem('Move tab');
         this._choices = POSITIONS.map(position => {
             const item = move.menu.addAction(position === 'center' ? 'By the clock' :
@@ -73,6 +104,8 @@ export default class KairosTabTime extends Extension {
             this._syncOriginal();
             if (++this._ticks % 8 === 0)
                 this._refresh();
+            if (this._ticks % 150 === 0)
+                this._hack.refresh();
             return GLib.SOURCE_CONTINUE;
         });
     }
@@ -83,6 +116,8 @@ export default class KairosTabTime extends Extension {
             this._timer = null;
         }
         this._cancellable?.cancel();
+        this._hack?.destroy();
+        this._hack = null;
         this._indicator?.destroy();
         for (const actor of this._hiddenIndicators) {
             if (actor.get_parent())

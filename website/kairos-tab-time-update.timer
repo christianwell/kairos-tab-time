@@ -1,0 +1,11 @@
+[Unit]
+Description=Check for Kairos Tab Time website updates
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+Persistent=true
+Unit=kairos-tab-time-update.service
+
+[Install]
+WantedBy=timers.target
